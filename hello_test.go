@@ -9,6 +9,6 @@ func TestHelloWorld(t *testing.T) {
 	expected := "Hello, world"
 
 	if result != expected {
-		t.Errorf(`Need ${expected} but got ${result}`)
+		t.Errorf("Need %s but got %s", expected, result)
 	}
 }
