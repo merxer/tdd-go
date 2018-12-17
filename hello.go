@@ -2,9 +2,11 @@ package main
 
 import "fmt"
 
+const helloPrefix = "Hello, "
+
 // Hello  return string
 func Hello(s string) string {
-	result := "Hello, " + s
+	result := helloPrefix + s
 	return result
 }
 
