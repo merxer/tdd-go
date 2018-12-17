@@ -3,6 +3,10 @@ package main
 import "fmt"
 
 const helloPrefix = "Hello, "
+const spanish = "Spanish"
+const thai = "Thai"
+const spanishHelloPrefix = "Hola, "
+const thaiHelloPrefix = "สวัสดีครับ, "
 
 // Hello  return string
 func Hello(name, language string) (result string) {
@@ -10,14 +14,12 @@ func Hello(name, language string) (result string) {
 		name = "world"
 	}
 
-	if language == "Spanish" {
-		helloPrefix := "Hola, "
-		return helloPrefix + name
+	if language == spanish {
+		return spanishHelloPrefix + name
 	}
 
-	if language == "Thai" {
-		helloPrefix := "สวัสดีครับ, "
-		return helloPrefix + name
+	if language == thai {
+		return thaiHelloPrefix + name
 	}
 
 	return helloPrefix + name
