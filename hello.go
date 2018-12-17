@@ -5,13 +5,11 @@ import "fmt"
 const helloPrefix = "Hello, "
 
 // Hello  return string
-func Hello(s string) (result string) {
-	if s != "" {
-		result = helloPrefix + s
-		return
+func Hello(name string) (result string) {
+	if name == "" {
+		name = "world"
 	}
-	result = helloPrefix + "world"
-	return
+	return helloPrefix + name
 }
 
 func main() {
