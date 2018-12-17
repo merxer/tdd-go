@@ -14,6 +14,12 @@ func Hello(name, language string) (result string) {
 		helloPrefix := "Hola, "
 		return helloPrefix + name
 	}
+
+	if language == "Thai" {
+		helloPrefix := "สวัสดีครับ, "
+		return helloPrefix + name
+	}
+
 	return helloPrefix + name
 }
 
