@@ -1,6 +1,9 @@
 package integers
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestAdder(t *testing.T) {
 	assertCorrectMessage := func(t *testing.T, sum, expected int) {
@@ -21,4 +24,10 @@ func TestAdder(t *testing.T) {
 		expected := 6
 		assertCorrectMessage(t, sum, expected)
 	})
+}
+
+func ExampleAdd() {
+	sum := Add(1, 5)
+	fmt.Println(sum)
+	// Output: 6
 }
