@@ -3,19 +3,22 @@ package integers
 import "testing"
 
 func TestAdder(t *testing.T) {
-	sum := Add(2, 2)
-	expected := 4
-
-	if sum != expected {
-		t.Errorf("expected '%d' but got '%d'", expected, sum)
+	assertCorrectMessage := func(t *testing.T, sum, expected int) {
+		t.Helper()
+		if sum != expected {
+			t.Errorf("expected '%d' but got '%d'", expected, sum)
+		}
 	}
-}
 
-func TestAdderWhenInputIs3_3(t *testing.T) {
-	sum := Add(3, 3)
-	expected := 6
+	t.Run("test adder when input is 2, 2", func(t *testing.T) {
+		sum := Add(2, 2)
+		expected := 4
+		assertCorrectMessage(t, sum, expected)
+	})
 
-	if sum != expected {
-		t.Errorf("expected '%d' but got '%d'", expected, sum)
-	}
+	t.Run("test adder when input is 3, 3", func(t *testing.T) {
+		sum := Add(3, 3)
+		expected := 6
+		assertCorrectMessage(t, sum, expected)
+	})
 }
