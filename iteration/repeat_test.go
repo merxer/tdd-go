@@ -33,4 +33,11 @@ func TestRepeat(t *testing.T) {
 		expected := "CCC"
 		assertCorrectMessage(t, expected, repeated)
 	})
+
+	t.Run("test repeat string when input 'D' 10 times", func(t *testing.T) {
+		repeated := Repeat("D", 10)
+		expected := "DDDDDDDDDD"
+		assertCorrectMessage(t, expected, repeated)
+	})
+
 }
