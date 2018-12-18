@@ -1,6 +1,9 @@
 package iteration
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestRepeat(t *testing.T) {
 	assertCorrectMessage := func(t *testing.T, expected, repeated string) {
@@ -46,4 +49,10 @@ func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		Repeat("8", i)
 	}
+}
+
+func ExampleRepeat() {
+	repeated := Repeat("z", 4)
+	fmt.Println(repeated)
+	// Output: zzzz
 }
