@@ -11,20 +11,26 @@ func TestRepeat(t *testing.T) {
 	}
 
 	t.Run("test repeat when input is 'a'", func(t *testing.T) {
-		repeated := Repeat("a")
+		repeated := Repeat("a", 5)
 		expected := "aaaaa"
 		assertCorrectMessage(t, expected, repeated)
 	})
 
 	t.Run("test repeat when input is 'b'", func(t *testing.T) {
-		repeated := Repeat("b")
+		repeated := Repeat("b", 5)
 		expected := "bbbbb"
 		assertCorrectMessage(t, expected, repeated)
 	})
 
 	t.Run("test repeat when input is 'A'", func(t *testing.T) {
-		repeated := Repeat("A")
+		repeated := Repeat("A", 5)
 		expected := "AAAAA"
+		assertCorrectMessage(t, expected, repeated)
+	})
+
+	t.Run("test repeat string when input 'C' 3 times", func(t *testing.T) {
+		repeated := Repeat("C", 3)
+		expected := "CCC"
 		assertCorrectMessage(t, expected, repeated)
 	})
 }
