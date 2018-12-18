@@ -10,3 +10,12 @@ func TestAdder(t *testing.T) {
 		t.Errorf("expected '%d' but got '%d'", expected, sum)
 	}
 }
+
+func TestAdderWhenInputIs3_3(t *testing.T) {
+	sum := Add(3, 3)
+	expected := 6
+
+	if sum != expected {
+		t.Errorf("expected '%d' but got '%d'", expected, sum)
+	}
+}

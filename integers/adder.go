@@ -1,5 +1,5 @@
 package integers
 
 func Add(x, y int) (sum int) {
-	return 4
+	return x + y
 }
