@@ -2,7 +2,7 @@ package iteration
 
 import "testing"
 
-func TestRepeatWhenInputIsA(t *testing.T) {
+func TestRepeat(t *testing.T) {
 	assertCorrectMessage := func(t *testing.T, expected, repeated string) {
 		t.Helper()
 		if repeated != expected {
