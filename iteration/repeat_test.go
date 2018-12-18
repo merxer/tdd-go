@@ -21,4 +21,10 @@ func TestRepeat(t *testing.T) {
 		expected := "bbbbb"
 		assertCorrectMessage(t, expected, repeated)
 	})
+
+	t.Run("test repeat when input is 'A'", func(t *testing.T) {
+		repeated := Repeat("A")
+		expected := "AAAAA"
+		assertCorrectMessage(t, expected, repeated)
+	})
 }

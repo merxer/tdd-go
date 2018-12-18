@@ -1,9 +1,9 @@
 package iteration
 
 // Repeat return duplication message
-func Repeat(s string) string {
-	if s == "b" {
-		return "bbbbb"
+func Repeat(s string) (r string) {
+	for i := 0; i < 5; i++ {
+		r = r + s
 	}
-	return "aaaaa"
+	return r
 }
