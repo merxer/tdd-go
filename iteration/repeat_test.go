@@ -3,19 +3,22 @@ package iteration
 import "testing"
 
 func TestRepeatWhenInputIsA(t *testing.T) {
-	repeated := Repeat("a")
-	expected := "aaaaa"
-
-	if repeated != expected {
-		t.Errorf("expected '%s' but got '%s'", expected, repeated)
+	assertCorrectMessage := func(t *testing.T, expected, repeated string) {
+		t.Helper()
+		if repeated != expected {
+			t.Errorf("expected '%s' but got '%s'", expected, repeated)
+		}
 	}
-}
 
-func TestRepeatWhenInputIsB(t *testing.T) {
-	repeated := Repeat("b")
-	expected := "bbbbb"
+	t.Run("test repeat when input is 'a'", func(t *testing.T) {
+		repeated := Repeat("a")
+		expected := "aaaaa"
+		assertCorrectMessage(t, expected, repeated)
+	})
 
-	if repeated != expected {
-		t.Errorf("expected '%s' but got '%s'", expected, repeated)
-	}
+	t.Run("test repeat when input is 'b'", func(t *testing.T) {
+		repeated := Repeat("b")
+		expected := "bbbbb"
+		assertCorrectMessage(t, expected, repeated)
+	})
 }
