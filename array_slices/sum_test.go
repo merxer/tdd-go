@@ -1,6 +1,9 @@
 package array_slices
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestSumWhenInput1_to_5(t *testing.T) {
 	numbers := []int{1, 2, 3, 4, 5}
@@ -32,4 +35,11 @@ func TestSumWhenInput3to2(t *testing.T) {
 	if sum != expected {
 		t.Errorf("expected '%d', but got '%d'", expected, sum)
 	}
+}
+
+func ExampleSum() {
+	s := []int{5, 5, 5, 5}
+	sum := Sum(s)
+	fmt.Printf("%d", sum)
+	// Output: 20
 }
