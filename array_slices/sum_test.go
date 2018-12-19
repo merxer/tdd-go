@@ -43,3 +43,9 @@ func ExampleSum() {
 	fmt.Printf("%d", sum)
 	// Output: 20
 }
+
+func BenchmarkSum(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Sum([]int{i, b.N})
+	}
+}
