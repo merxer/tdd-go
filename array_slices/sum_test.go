@@ -2,6 +2,7 @@ package array_slices
 
 import (
 	"fmt"
+	"reflect"
 	"testing"
 )
 
@@ -47,5 +48,14 @@ func ExampleSum() {
 func BenchmarkSum(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		Sum([]int{i, b.N})
+	}
+}
+
+func TestSumAll(t *testing.T) {
+	sum := SumAll([]int{1, 2}, []int{0, 9})
+	expected := []int{3, 9}
+
+	if reflect.DeepEqual(sum, expected) {
+		t.Errorf("expected '%d', but got '%d'", expected, sum)
 	}
 }

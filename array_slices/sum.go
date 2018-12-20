@@ -7,3 +7,7 @@ func Sum(numbers []int) (sum int) {
 	}
 	return
 }
+
+func SumAll(x []int, y []int) []int {
+	return []int{}
+}
