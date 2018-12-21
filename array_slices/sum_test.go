@@ -67,3 +67,12 @@ func TestSumAll_2(t *testing.T) {
 		t.Errorf("expected '%d', but got '%d'", expected, sum)
 	}
 }
+
+func TestSumAllTails(t *testing.T) {
+	sumTails := SumAllTails([]int{1, 2}, []int{0, 9})
+	expected := []int{2, 9}
+
+	if !reflect.DeepEqual(sumTails, expected) {
+		t.Errorf("expected '%d', but got '%d'", expected, sumTails)
+	}
+}
