@@ -55,7 +55,15 @@ func TestSumAll(t *testing.T) {
 	sum := SumAll([]int{1, 2}, []int{0, 9})
 	expected := []int{3, 9}
 
-	if reflect.DeepEqual(sum, expected) {
+	if !reflect.DeepEqual(sum, expected) {
+		t.Errorf("expected '%d', but got '%d'", expected, sum)
+	}
+}
+func TestSumAll_2(t *testing.T) {
+	sum := SumAll([]int{1, 2}, []int{2, 3})
+	expected := []int{3, 5}
+
+	if !reflect.DeepEqual(sum, expected) {
 		t.Errorf("expected '%d', but got '%d'", expected, sum)
 	}
 }
