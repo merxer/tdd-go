@@ -69,10 +69,22 @@ func TestSumAll_2(t *testing.T) {
 }
 
 func TestSumAllTails(t *testing.T) {
-	sumTails := SumAllTails([]int{1, 2}, []int{0, 9})
-	expected := []int{2, 9}
+	t.Run("make the sum of sum slices", func(t *testing.T) {
+		sumTails := SumAllTails([]int{1, 2}, []int{0, 9})
+		expected := []int{2, 9}
 
-	if !reflect.DeepEqual(sumTails, expected) {
-		t.Errorf("expected '%d', but got '%d'", expected, sumTails)
-	}
+		if !reflect.DeepEqual(sumTails, expected) {
+			t.Errorf("expected '%d', but got '%d'", expected, sumTails)
+		}
+	})
+
+	t.Run("safety sum empty slices", func(t *testing.T) {
+		sumTails := SumAllTails([]int{}, []int{3, 4, 5})
+		expected := []int{0, 9}
+
+		if !reflect.DeepEqual(sumTails, expected) {
+			t.Errorf("expected '%d', but got '%d'", expected, sumTails)
+		}
+	})
+
 }
