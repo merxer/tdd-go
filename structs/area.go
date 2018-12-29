@@ -1,5 +1,9 @@
 package main
 
-func Area(width, height float64) float64 {
-	return 72.0
+type Rectangle struct {
+	width, height float64
+}
+
+func Area(r Rectangle) float64 {
+	return r.width * r.height
 }

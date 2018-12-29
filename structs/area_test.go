@@ -3,7 +3,8 @@ package main
 import "testing"
 
 func TestArea(t *testing.T) {
-	got := Area(12.0, 6.0)
+	rectangle := Rectangle{12.0, 6.0}
+	got := Area(rectangle)
 	want:= 72.0
 
 	if got != want {
