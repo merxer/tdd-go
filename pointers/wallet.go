@@ -1,13 +1,13 @@
 package wallet
 
 type Wallet struct {
-	cash int
+	balance int
 }
 
-func (w *Wallet) Deposit(cash_in int) {
-	w.cash = cash_in
+func (w *Wallet) Deposit(amount int) {
+	w.balance = amount
 }
 
-func (w *Wallet) Balance() (balance int) {
-	return w.cash
+func (w *Wallet) Balance() int {
+	return w.balance
 }
