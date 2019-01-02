@@ -17,8 +17,9 @@ type Stringer interface {
 
 var ErrInsufficientFunds = errors.New("cannot withdraw, insufficient funds")
 
-func (w *Wallet) Deposit(amount Bitcoin) {
+func (w *Wallet) Deposit(amount Bitcoin) error {
 	w.balance += amount
+	return nil
 }
 
 func (w *Wallet) Balance() Bitcoin {
