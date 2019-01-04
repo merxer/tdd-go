@@ -1,13 +1,13 @@
-package main
+package dictionary
 
 import "testing"
 
 func TestSearch(t *testing.T) {
-	dictionary := map[string]string{
+	dictionary := Dictionary{
 		"test": "this is just a test",
 	}
 
-	got := Search(dictionary, "test")
+	got := dictionary.Search("test")
 	want := "this is just a test"
 
 	assertStrings(t, got, want)
